@@ -59,3 +59,20 @@
   cursor: pointer;
   width: 80%;
 }
+
+.div-records-card button:hover {
+  background-color: #dcdee6;
+  color: #3D56C0;
+  border: none;
+  border-radius: 3px;
+  padding: 13px 10px;
+  margin: 20px 3px 20PX 3PX;
+  cursor: pointer;
+  width: 80%;
+}
+
+.div-records-content .no-records-alert {
+  color: #E7497A;
+  text-align: center;
+  font-size: xx-large;
+}

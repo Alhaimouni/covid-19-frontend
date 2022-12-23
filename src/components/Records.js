@@ -22,7 +22,7 @@ const Records = () => {
           ))}
         </When>
         <When condition={!records.length}>
-          <p>No data</p>
+          <p className='no-records-alert'>No Available Records</p>
         </When>
       </div>
     </div>

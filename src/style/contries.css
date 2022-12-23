@@ -59,3 +59,15 @@
   cursor: pointer;
   width: 80%;
 }
+
+
+.div-Country-card button:hover {
+  background-color: #dcdee6;
+  color: #3D56C0;
+  border: none;
+  border-radius: 3px;
+  padding: 13px 10px;
+  margin: 20px 3px 20PX 3PX;
+  cursor: pointer;
+  width: 80%;
+}
