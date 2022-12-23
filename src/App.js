@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Home data='meow' />} />
+          <Route path="/" element={<Home />} />
           <Route path="/allcountries" element={<Countries />} />
           <Route path="/records" element={<Records />} />
           <Route path="*" element={<NotFound />} />

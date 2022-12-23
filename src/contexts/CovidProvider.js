@@ -9,6 +9,7 @@ function CovidProvider(props) {
   const [covidData, setCovidData] = useState({});
   const [searchData, setSearchData] = useState([]);
   const [summary, setSummary] = useState([]);
+  const [records, setRecords] = useState([]);
 
 
   async function getCovidData() {
@@ -36,8 +37,25 @@ function CovidProvider(props) {
   }
 
   async function addToRecords(data) {
-    const url = `${process.env.REACT_APP_SERVER}`;
-    // const axiosResponse = await axios.post(url, data);
+    const url = `${process.env.REACT_APP_SERVER}/addRecord`;
+    const body = {
+      country: data.Country,
+      date: data.Date
+    }
+    const axiosResponse = await axios.post(url, body);
+  }
+
+  async function getAllRecords() {
+    const url = `${process.env.REACT_APP_SERVER}/getRecords`;
+    const axiosResponse = await axios.get(url);
+    const data = axiosResponse.data;
+    setRecords(data);
+  }
+
+  async function deleteRecord(id) {
+    const url = `${process.env.REACT_APP_SERVER}/deleteRecord/${id}`;
+    console.log(url);
+    await axios.delete(url);
   }
 
   const value = {
@@ -47,7 +65,10 @@ function CovidProvider(props) {
     searchByInputs,
     summary,
     getSummary,
-    addToRecords
+    addToRecords,
+    records,
+    getAllRecords,
+    deleteRecord
   };
 
   return (

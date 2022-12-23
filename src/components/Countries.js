@@ -18,14 +18,7 @@ function Countries() {
       <div className='div-contries-content'>
         <When condition={summary.length}>
           {summary.map((item, index) => (
-            <CountriesCard
-              key={index}
-              allData={item}
-              country={item.Country}
-              confirmed={item.TotalConfirmed}
-              deaths={item.TotalDeaths}
-              recovered={item.TotalRecovered}
-              date={item.Date} />
+            <CountriesCard key={index} allData={item}/>
           ))}
         </When>
       </div>

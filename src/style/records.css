@@ -1,0 +1,61 @@
+.div-records {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  min-height: 460px;
+  background-color: #F5F5F5;
+}
+
+.div-records .title {
+  width: 100%;
+  text-align: center;
+  margin-top: 45px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.div-records-content {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 95%;
+}
+
+.div-records-card {
+  background-color: white;
+  border: 1px solid rgb(172, 172, 172);
+  border-left: #E7497A 10px solid;
+  min-width: 400px;
+  min-height: 250px;
+  padding: 5px 15px;
+  margin: 20px 20px;
+  border-radius: 0px 5px 5px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+.div-records-card .head {
+  color: #E7497A;
+  text-align: center;
+  font-size: x-large;
+}
+
+.div-records-card .data {
+  text-align: center;
+  font-size: large;
+}
+
+.div-records-card button {
+  background-color: #3D56C0;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 13px 10px;
+  margin: 20px 3px 20PX 3PX;
+  cursor: pointer;
+  width: 80%;
+}
