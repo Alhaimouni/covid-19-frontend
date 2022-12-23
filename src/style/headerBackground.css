@@ -10,7 +10,7 @@
 .header-background h1 {
   color: black;
   font-size: 60px;
-  margin: 50px 0px;
+  margin: 50px 0px 30px 0px;
   font-family: cursive;
 }
 
@@ -23,6 +23,11 @@
   font-family: cursive;
 }
 
+.header-background .sub-title {
+  font-size: 30px;
+}
+
 .header-background p {
   color: rgb(255, 255, 255);
+  margin-bottom: 40px;
 }
