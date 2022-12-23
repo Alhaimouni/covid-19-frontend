@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -11,16 +10,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home data='meow' />} />
           <Route path="/allcountries" element={<Countries />} />
-          <Route path="/myrecords" element={<Records />} />
+          <Route path="/records" element={<Records />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   );
 }

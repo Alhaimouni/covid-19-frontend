@@ -14,11 +14,25 @@
 .nav-pages li {
   margin: 0px 0px 0px 45px;
   list-style-type: none;
+  padding-bottom: 5px;
   border-bottom: 1px solid rgba(255, 255, 255, 0);
 }
 
 .nav-pages li:hover {
   border-bottom: 1px solid white;
   cursor: pointer;
+  padding-bottom: 5px;
   transition-duration: 100ms;
+}
+
+.nav-pages a {
+  color: unset;
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: none;
+  color: white;
+  border-bottom: 2px solid #E7497A;
+  padding-bottom: 5px;
 }

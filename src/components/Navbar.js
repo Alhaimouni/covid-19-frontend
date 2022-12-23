@@ -1,13 +1,17 @@
 import React from 'react';
 import '../style/navbar.css';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 function Navbar() {
+
+  const navigate = useNavigate();
+
   return (
     <div className='navbar'>
       <ul className='nav-pages'>
-        <li>Home</li>
-        <li>All Contries</li>
-        <li>My Records</li>
+        <li ><NavLink to='/' >Home</NavLink></li>
+        <li ><NavLink to='/allcountries' >All Contries</NavLink></li>
+        <li ><NavLink to='/records' >My Records</NavLink></li>
       </ul>
     </div>
   )
