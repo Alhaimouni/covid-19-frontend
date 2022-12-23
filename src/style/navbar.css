@@ -1,0 +1,24 @@
+.navbar {
+  background-color: #333333;
+  color: white;
+  height: 20%;
+}
+
+.nav-pages {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding-left: 0px;
+}
+
+.nav-pages li {
+  margin: 0px 0px 0px 45px;
+  list-style-type: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+
+.nav-pages li:hover {
+  border-bottom: 1px solid white;
+  cursor: pointer;
+  transition-duration: 100ms;
+}

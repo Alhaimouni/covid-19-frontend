@@ -1,0 +1,22 @@
+.header-background {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #3D56C0;
+  height: 80%;
+}
+
+.header-background h1 {
+  color: black;
+  font-size: xx-large;
+}
+
+.header-background h1 span {
+  color: rgb(255, 255, 255);
+  font-size: xx-large;
+}
+
+.header-background p {
+  color: rgb(255, 255, 255);
+}
