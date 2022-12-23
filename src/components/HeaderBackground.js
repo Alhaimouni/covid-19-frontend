@@ -1,4 +1,5 @@
 import React from 'react';
+import '../style/headerBackground.css'
 
 function HeaderBackground() {
   return (
