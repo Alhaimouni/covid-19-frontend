@@ -23,6 +23,12 @@
   width: 95%;
 }
 
+.div-contries-content .alert {
+  color: #E7497A;
+  text-align: center;
+  font-size: xx-large;
+}
+
 .div-Country-card {
   background-color: white;
   border: 1px solid rgb(172, 172, 172);

@@ -7,7 +7,7 @@ import { When } from 'react-if';
 function Countries() {
 
   const { getSummary, summary } = useContext(covidContext);
-  
+
   useEffect(() => {
     getSummary();
   }, []);
@@ -16,9 +16,12 @@ function Countries() {
     <div className='div-contries'>
       <p className='title'>Covid-19 Statistics for all countries</p>
       <div className='div-contries-content'>
+        <When condition={!summary.length}>
+          <p className='alert'>Can't Get Data now </p>
+        </When>
         <When condition={summary.length}>
           {summary.map((item, index) => (
-            <CountriesCard key={index} allData={item}/>
+            <CountriesCard key={index} allData={item} />
           ))}
         </When>
       </div>
