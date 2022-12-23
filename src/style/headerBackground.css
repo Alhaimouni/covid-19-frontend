@@ -9,15 +9,18 @@
 
 .header-background h1 {
   color: black;
-  font-size: xx-large;
+  font-size: 60px;
+  margin: 50px 0px;
+  font-family: cursive;
 }
 
 .header-background h1 span {
   color: rgb(255, 255, 255);
-  font-size: xx-large;
+  font-size: 60px;
   background-color: #E7497A;
   padding: 15px;
   border-radius: 50%;
+  font-family: cursive;
 }
 
 .header-background p {
