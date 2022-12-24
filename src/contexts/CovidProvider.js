@@ -35,6 +35,7 @@ function CovidProvider(props) {
     if (axiosResponse.data.Countries) {
       const countriesData = axiosResponse.data.Countries;
       setSummary(countriesData);
+      setMessage('');
     } else {
       setMessage(axiosResponse.data.Message);
     }
