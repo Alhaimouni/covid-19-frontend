@@ -42,7 +42,7 @@ function CovidProvider(props) {
   }
 
   async function addToRecords(data) {
-    const url = `${process.env.REACT_APP_SERVER}/addrecord`;
+    const url = `${process.env.REACT_APP_SERVER}/record`;
     const body = {
       country: data.Country,
       date: data.Date
@@ -51,14 +51,14 @@ function CovidProvider(props) {
   }
 
   async function getAllRecords() {
-    const url = `${process.env.REACT_APP_SERVER}/getrecords`;
+    const url = `${process.env.REACT_APP_SERVER}/record`;
     const axiosResponse = await axios.get(url);
     const data = axiosResponse.data;
     setRecords(data);
   }
 
   async function deleteRecord(id) {
-    const url = `${process.env.REACT_APP_SERVER}/deleterecord/${id}`;
+    const url = `${process.env.REACT_APP_SERVER}/record/${id}`;
     console.log(url);
     await axios.delete(url);
   }
