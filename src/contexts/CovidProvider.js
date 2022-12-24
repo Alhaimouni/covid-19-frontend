@@ -10,7 +10,7 @@ function CovidProvider(props) {
   const [searchData, setSearchData] = useState([]);
   const [summary, setSummary] = useState([]);
   const [records, setRecords] = useState([]);
-
+  const [message, setMessage] = useState('');
 
   async function getCovidData() {
     const url = `${process.env.REACT_APP_COVID}/world/total`;
@@ -32,8 +32,12 @@ function CovidProvider(props) {
   async function getSummary() {
     const url = `${process.env.REACT_APP_COVID}/summary`;
     const axiosResponse = await axios.get(url);
-    const countriesData = axiosResponse.data.Countries;
-    setSummary(countriesData);
+    if (axiosResponse.data.Countries) {
+      const countriesData = axiosResponse.data.Countries;
+      setSummary(countriesData);
+    } else {
+      setMessage(axiosResponse.data.Message);
+    }
   }
 
   async function addToRecords(data) {
@@ -65,9 +69,10 @@ function CovidProvider(props) {
     searchByInputs,
     summary,
     getSummary,
-    addToRecords,
     records,
     getAllRecords,
+    message,
+    addToRecords,
     deleteRecord
   };
 

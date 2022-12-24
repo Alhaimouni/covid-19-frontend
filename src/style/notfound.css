@@ -1,0 +1,17 @@
+.div-notfound {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 460px;
+  background-color: #F5F5F5;
+}
+
+.div-notfound p {
+  color: #E7497A;
+  text-align: center;
+  font-size: 60px;
+  background-color: rgb(59, 59, 59);
+  padding: 120px;
+  border-radius: 5px;
+}

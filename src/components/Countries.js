@@ -6,7 +6,7 @@ import { When } from 'react-if';
 
 function Countries() {
 
-  const { getSummary, summary } = useContext(covidContext);
+  const { getSummary, summary, message } = useContext(covidContext);
 
   useEffect(() => {
     getSummary();
@@ -16,6 +16,9 @@ function Countries() {
     <div className='div-contries'>
       <p className='title'>Covid-19 Statistics for all countries</p>
       <div className='div-contries-content'>
+        <When condition={message !== ''}>
+          <p className='alert'>Server is Out</p>
+        </When>
         <When condition={!summary.length}>
           <p className='alert'>Can't Get Data now </p>
         </When>
