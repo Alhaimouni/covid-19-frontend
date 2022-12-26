@@ -4,8 +4,6 @@ import { NavLink, useNavigate } from 'react-router-dom';
 
 function Navbar() {
 
-  const navigate = useNavigate();
-
   return (
     <div className='navbar'>
       <ul className='nav-pages'>

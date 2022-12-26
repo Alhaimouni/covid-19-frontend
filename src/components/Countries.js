@@ -6,7 +6,7 @@ import { When } from 'react-if';
 
 function Countries() {
 
-  const { getSummary, summary, message } = useContext(covidContext);
+  const { getSummary, state } = useContext(covidContext);
 
   useEffect(() => {
     getSummary();
@@ -16,11 +16,11 @@ function Countries() {
     <div className='div-contries'>
       <p className='title'>Covid-19 Statistics for all countries</p>
       <div className='div-contries-content'>
-        <When condition={message !== ''}>
-          <p className='alert'>Server Message : {message}</p>
+        <When condition={state.message !== ''}>
+          <p className='alert'>Server Message : {state.message}</p>
         </When>
-        <When condition={summary.length}>
-          {summary.map((item, index) => (
+        <When condition={state.summary.length}>
+          {state.summary.map((item, index) => (
             <CountriesCard key={index} allData={item} />
           ))}
         </When>

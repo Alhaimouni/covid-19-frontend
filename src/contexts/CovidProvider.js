@@ -1,22 +1,19 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
+import covidReducer, { initialState, AcorrectSummary, AbadSummary, AgetAllRecords, AsearchData, AsetCovidData } from '../reducers/covid.reducer';
 
 
 export const covidContext = React.createContext();
 
 function CovidProvider(props) {
 
-  const [covidData, setCovidData] = useState({});
-  const [searchData, setSearchData] = useState([]);
-  const [summary, setSummary] = useState([]);
-  const [records, setRecords] = useState([]);
-  const [message, setMessage] = useState('');
+  const [state, d] = useReducer(covidReducer, initialState);
 
   async function getCovidData() {
     const url = `${process.env.REACT_APP_COVID}/world/total`;
     const axiosResponse = await axios.get(url);
     const data = axiosResponse.data;
-    setCovidData(data);
+    d(AsetCovidData(data));
   }
 
   async function searchByInputs(e) {
@@ -25,8 +22,7 @@ function CovidProvider(props) {
     const url = `${process.env.REACT_APP_COVID}/country/${e.target.contry.value}/status/confirmed?from=${`${fromdate[0]}-${fromdate[2]}-${fromdate[1]}`}T00:00:00Z&to=${`${todate[0]}-${todate[2]}-${todate[1]}`}T00:00:00Z`;
     const axiosResponse = await axios.get(url);
     const data = axiosResponse.data;
-    console.log(data);
-    setSearchData(data);
+    d(AsearchData(data));
   }
 
   async function getSummary() {
@@ -34,10 +30,9 @@ function CovidProvider(props) {
     const axiosResponse = await axios.get(url);
     if (axiosResponse.data.Countries) {
       const countriesData = axiosResponse.data.Countries;
-      setSummary(countriesData);
-      setMessage('');
+      d(AcorrectSummary(countriesData));
     } else {
-      setMessage(axiosResponse.data.Message);
+      d(AbadSummary(axiosResponse.data.Message));
     }
   }
 
@@ -54,7 +49,7 @@ function CovidProvider(props) {
     const url = `${process.env.REACT_APP_SERVER}/record`;
     const axiosResponse = await axios.get(url);
     const data = axiosResponse.data;
-    setRecords(data);
+    d(AgetAllRecords(data));
   }
 
   async function deleteRecord(id) {
@@ -64,17 +59,13 @@ function CovidProvider(props) {
   }
 
   const value = {
-    covidData,
     getCovidData,
-    searchData,
     searchByInputs,
-    summary,
     getSummary,
-    records,
     getAllRecords,
-    message,
     addToRecords,
-    deleteRecord
+    deleteRecord,
+    state
   };
 
   return (

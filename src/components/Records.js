@@ -6,22 +6,22 @@ import RecordsCard from './RecordsCard';
 
 const Records = () => {
 
-  const { records, getAllRecords } = useContext(covidContext);
+  const { state, getAllRecords } = useContext(covidContext);
 
   useEffect(() => {
     getAllRecords();
-  }, [records]);
+  }, [state.records]);
 
   return (
     <div className='div-records'>
       <p className='title'>Saved Records</p>
       <div className='div-records-content'>
-        <When condition={records.length}>
-          {records.map((item, index) => (
+        <When condition={state.records.length}>
+          {state.records.map((item, index) => (
             <RecordsCard key={index} allData={item} />
           ))}
         </When>
-        <When condition={!records.length}>
+        <When condition={!state.records.length}>
           <p className='no-records-alert'>No Available Records</p>
         </When>
       </div>
